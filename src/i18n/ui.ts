@@ -33,7 +33,7 @@ export const ui = {
 
     'hero.badge': 'Kurumsal Yazılım Çözümleri',
     'hero.title': 'Operasyonel Süreçlerinizi Dijitalleştirin',
-    'hero.subtitle': 'AsminSoft, saha operasyonları, personel yönetimi ve liman süreçlerinde verimliliği artıran kurumsal yazılımlar geliştirir.',
+    'hero.subtitle': 'AsminTech, yüklenici kart başvuru süreçleri, dijital vardiya takibi ve liman operasyonları için kurumsal yazılım çözümleri geliştirir.',
     'hero.cta.primary': 'Ürünleri İncele',
     'hero.cta.secondary': 'Demo Talep Et',
 
@@ -54,7 +54,7 @@ export const ui = {
 
     'card.learnmore': 'Detaylı İncele',
 
-    'why.title': 'Neden AsminSoft?',
+    'why.title': 'Neden AsminTech?',
     'why.1.title': 'Sektöre Özel',
     'why.1.desc': 'İnşaat, enerji, liman ve endüstriyel tesislerin gerçek süreçleri üzerine inşa edildi.',
     'why.2.title': 'Uçtan Uca Dijital',
@@ -156,7 +156,7 @@ export const ui = {
 
     // About
     'about.title': 'Hakkımızda',
-    'about.lead': 'AsminSoft, endüstriyel tesisler ve operasyonel yoğun sektörler için kurumsal yazılım çözümleri geliştirir.',
+    'about.lead': 'AsminTech, endüstriyel tesisler ve operasyonel yoğun sektörler için kurumsal yazılım çözümleri geliştirir.',
     'about.p1': 'Yıllardır saha ve operasyon süreçlerinin içinde yer alarak edindiğimiz deneyimi, modern yazılım teknolojileriyle birleştiriyoruz. Ürünlerimiz laboratuvar koşullarında değil, gerçek operasyonların içinde doğdu.',
     'about.p2': 'Amacımız, büyük ölçekli kurumsal yazılımların karmaşıklığından uzak, sahada çalışan insanlar için pratik ve güçlü araçlar sunmak.',
     'about.values.title': 'Değerlerimiz',
@@ -193,7 +193,7 @@ export const ui = {
 
     'hero.badge': 'Enterprise Software Solutions',
     'hero.title': 'Digitize Your Operational Processes',
-    'hero.subtitle': 'AsminSoft builds enterprise software that boosts efficiency across field operations, workforce management, and port operations.',
+    'hero.subtitle': 'AsminTech builds enterprise software solutions for contractor access card application workflows, digital shift tracking, and port operations.',
     'hero.cta.primary': 'Explore Products',
     'hero.cta.secondary': 'Request a Demo',
 
@@ -214,7 +214,7 @@ export const ui = {
 
     'card.learnmore': 'Learn More',
 
-    'why.title': 'Why AsminSoft?',
+    'why.title': 'Why AsminTech?',
     'why.1.title': 'Industry-Specific',
     'why.1.desc': 'Built on the real processes of construction, energy, ports and industrial facilities.',
     'why.2.title': 'End-to-End Digital',
@@ -316,7 +316,7 @@ export const ui = {
 
     // About
     'about.title': 'About Us',
-    'about.lead': 'AsminSoft builds enterprise software for industrial facilities and operations-heavy industries.',
+    'about.lead': 'AsminTech builds enterprise software for industrial facilities and operations-heavy industries.',
     'about.p1': 'We combine years of hands-on experience in field and operations processes with modern software technologies. Our products were born inside real operations, not in a lab.',
     'about.p2': 'Our goal is to provide practical and powerful tools for the people working on the ground — free from the complexity of bloated enterprise software.',
     'about.values.title': 'Our Values',
