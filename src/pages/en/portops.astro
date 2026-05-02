@@ -1,0 +1,31 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import ProductPage from '../../components/ProductPage.astro';
+
+const title = 'PortOps — Port Operations Management Software | AsminSoft';
+const description = 'PortOps is a port operations management system integrating vessel, cargo, shift and equipment processes — built for container and general cargo terminals.';
+---
+
+<Layout title={title} description={description}>
+  <ProductPage
+    productName="PortOps"
+    accent="amber"
+    heroTitleKey="po.hero.title"
+    heroSubtitleKey="po.hero.subtitle"
+    problemTitleKey="po.problem.title"
+    problemKeys={['po.problem.1','po.problem.2','po.problem.3','po.problem.4','po.problem.5']}
+    solutionTitleKey="po.solution.title"
+    solutionDescKey="po.hero.subtitle"
+    featuresTitleKey="po.features.title"
+    features={[
+      { titleKey: 'po.f1.title', descKey: 'po.f1.desc' },
+      { titleKey: 'po.f2.title', descKey: 'po.f2.desc' },
+      { titleKey: 'po.f3.title', descKey: 'po.f3.desc' },
+      { titleKey: 'po.f4.title', descKey: 'po.f4.desc' },
+      { titleKey: 'po.f5.title', descKey: 'po.f5.desc' },
+      { titleKey: 'po.f6.title', descKey: 'po.f6.desc' },
+    ]}
+    whoTitleKey="po.who.title"
+    whoListKey="po.who.list"
+  />
+</Layout>

@@ -1,0 +1,48 @@
+---
+import Layout from '../layouts/Layout.astro';
+import ProductPage from '../components/ProductPage.astro';
+
+const title = 'ShiftLog — Dijital Vardiya Defteri Yazılımı | AsminSoft';
+const description = 'ShiftLog, klasik vardiya defterini dijitalleştirir; olay kayıtları, devir teslim ve ekip iletişimini izlenebilir kılar. Vardiya takip ve vardiya defteri yazılımı.';
+---
+
+<Layout title={title} description={description}>
+  <ProductPage
+    productName="ShiftLog"
+    accent="emerald"
+    heroTitleKey="sl.hero.title"
+    heroSubtitleKey="sl.hero.subtitle"
+    problemTitleKey="sl.problem.title"
+    problemKeys={['sl.problem.1','sl.problem.2','sl.problem.3','sl.problem.4','sl.problem.5']}
+    solutionTitleKey="sl.solution.title"
+    solutionDescKey="sl.hero.subtitle"
+    featuresTitleKey="sl.features.title"
+    features={[
+      { titleKey: 'sl.f1.title', descKey: 'sl.f1.desc' },
+      { titleKey: 'sl.f2.title', descKey: 'sl.f2.desc' },
+      { titleKey: 'sl.f3.title', descKey: 'sl.f3.desc' },
+      { titleKey: 'sl.f4.title', descKey: 'sl.f4.desc' },
+      { titleKey: 'sl.f5.title', descKey: 'sl.f5.desc' },
+      { titleKey: 'sl.f6.title', descKey: 'sl.f6.desc' },
+    ]}
+    whoTitleKey="sl.who.title"
+    whoListKey="sl.who.list"
+  >
+    <div slot="hero-visual" class="hidden lg:block w-[520px] flex-shrink-0">
+      <div class="rounded-xl overflow-hidden shadow-2xl border border-white/10 ring-1 ring-white/10">
+        <div class="bg-slate-800/60 backdrop-blur-sm px-4 py-2.5 flex items-center gap-2">
+          <span class="w-3 h-3 rounded-full bg-red-400"></span>
+          <span class="w-3 h-3 rounded-full bg-yellow-400"></span>
+          <span class="w-3 h-3 rounded-full bg-green-400"></span>
+          <span class="ml-3 text-xs text-white/50 font-mono">ShiftLog — Vardiya Paneli</span>
+        </div>
+        <img
+          src="/images/shiftlog-dashboard.png"
+          alt="ShiftLog uygulama ekranı"
+          class="w-full block"
+          loading="eager"
+        />
+      </div>
+    </div>
+  </ProductPage>
+</Layout>

@@ -1,0 +1,31 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import ProductPage from '../../components/ProductPage.astro';
+
+const title = 'ShiftLog — Digital Shift Logbook Software | AsminSoft';
+const description = 'ShiftLog replaces the paper shift logbook with a digital system — making handovers, incidents and team communication traceable and searchable.';
+---
+
+<Layout title={title} description={description}>
+  <ProductPage
+    productName="ShiftLog"
+    accent="emerald"
+    heroTitleKey="sl.hero.title"
+    heroSubtitleKey="sl.hero.subtitle"
+    problemTitleKey="sl.problem.title"
+    problemKeys={['sl.problem.1','sl.problem.2','sl.problem.3','sl.problem.4','sl.problem.5']}
+    solutionTitleKey="sl.solution.title"
+    solutionDescKey="sl.hero.subtitle"
+    featuresTitleKey="sl.features.title"
+    features={[
+      { titleKey: 'sl.f1.title', descKey: 'sl.f1.desc' },
+      { titleKey: 'sl.f2.title', descKey: 'sl.f2.desc' },
+      { titleKey: 'sl.f3.title', descKey: 'sl.f3.desc' },
+      { titleKey: 'sl.f4.title', descKey: 'sl.f4.desc' },
+      { titleKey: 'sl.f5.title', descKey: 'sl.f5.desc' },
+      { titleKey: 'sl.f6.title', descKey: 'sl.f6.desc' },
+    ]}
+    whoTitleKey="sl.who.title"
+    whoListKey="sl.who.list"
+  />
+</Layout>

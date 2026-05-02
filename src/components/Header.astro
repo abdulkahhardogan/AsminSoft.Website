@@ -1,0 +1,114 @@
+---
+import { getLangFromUrl, useTranslations, localizedPath, type Lang } from '../i18n/ui';
+
+const lang: Lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const navItems = [
+  { href: '/', key: 'nav.home' as const },
+  { href: '/contractorpass', key: 'nav.contractorpass' as const },
+  { href: '/shiftlog', key: 'nav.shiftlog' as const },
+  { href: '/portops', key: 'nav.portops' as const },
+  { href: lang === 'tr' ? '/hakkimizda' : '/about', key: 'nav.about' as const },
+  { href: lang === 'tr' ? '/iletisim' : '/contact', key: 'nav.contact' as const },
+];
+
+const currentPath = Astro.url.pathname;
+
+function stripLangPrefix(path: string): string {
+  if (path.startsWith('/en/')) return path.slice(3);
+  if (path === '/en') return '/';
+  return path;
+}
+
+const pathWithoutLang = stripLangPrefix(currentPath) || '/';
+
+function switchTo(target: Lang): string {
+  let p = pathWithoutLang;
+  if (target === 'tr') {
+    if (p === '/about') p = '/hakkimizda';
+    else if (p === '/contact') p = '/iletisim';
+  } else {
+    if (p === '/hakkimizda') p = '/about';
+    else if (p === '/iletisim') p = '/contact';
+  }
+  return localizedPath(target, p);
+}
+---
+
+<header class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-slate-200">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex h-16 items-center justify-between">
+      <a href={localizedPath(lang, '/')} class="flex items-center gap-2 font-bold text-xl">
+        <span class="inline-block w-8 h-8 rounded-lg bg-gradient-to-br from-brand-600 to-brand-800"></span>
+        <span class="text-brand-900">AsminSoft</span>
+      </a>
+
+      <nav class="hidden lg:flex items-center gap-6">
+        {navItems.map((item) => {
+          const href = localizedPath(lang, item.href);
+          const isActive = currentPath === href || (item.href !== '/' && currentPath.startsWith(href));
+          return (
+            <a
+              href={href}
+              class:list={[
+                'text-sm font-medium transition-colors',
+                isActive ? 'text-brand-700' : 'text-slate-600 hover:text-brand-700',
+              ]}
+            >
+              {t(item.key)}
+            </a>
+          );
+        })}
+      </nav>
+
+      <div class="flex items-center gap-3">
+        <div class="flex items-center text-sm border border-slate-200 rounded-lg overflow-hidden">
+          <a
+            href={switchTo('tr')}
+            class:list={['px-3 py-1.5 font-medium', lang === 'tr' ? 'bg-brand-700 text-white' : 'text-slate-600 hover:bg-slate-50']}
+          >TR</a>
+          <a
+            href={switchTo('en')}
+            class:list={['px-3 py-1.5 font-medium', lang === 'en' ? 'bg-brand-700 text-white' : 'text-slate-600 hover:bg-slate-50']}
+          >EN</a>
+        </div>
+        <a
+          href={localizedPath(lang, lang === 'tr' ? '/iletisim' : '/contact')}
+          class="hidden sm:inline-flex items-center px-4 py-2 bg-brand-700 text-white text-sm font-semibold rounded-lg hover:bg-brand-800 transition-colors"
+        >
+          {t('cta.button')}
+        </a>
+        <button
+          type="button"
+          id="mobile-menu-btn"
+          class="lg:hidden inline-flex items-center justify-center w-10 h-10 rounded-lg text-slate-600 hover:bg-slate-100"
+          aria-label="Menu"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-6 h-6">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5M3.75 17.25h16.5"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <nav id="mobile-menu" class="hidden lg:hidden pb-4">
+      <div class="flex flex-col gap-1">
+        {navItems.map((item) => {
+          const href = localizedPath(lang, item.href);
+          return (
+            <a href={href} class="px-3 py-2 rounded-md text-slate-700 hover:bg-slate-50 font-medium">
+              {t(item.key)}
+            </a>
+          );
+        })}
+      </div>
+    </nav>
+  </div>
+</header>
+
+<script>
+  const btn = document.getElementById('mobile-menu-btn');
+  const menu = document.getElementById('mobile-menu');
+  btn?.addEventListener('click', () => menu?.classList.toggle('hidden'));
+</script>

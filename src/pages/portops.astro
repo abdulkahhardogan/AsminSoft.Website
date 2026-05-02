@@ -1,0 +1,48 @@
+---
+import Layout from '../layouts/Layout.astro';
+import ProductPage from '../components/ProductPage.astro';
+
+const title = 'PortOps — Liman Operasyonları Yönetim Yazılımı | AsminSoft';
+const description = 'PortOps, gemi, yük, vardiya ve ekipman süreçlerini entegre eden liman operasyon yönetim sistemidir. Konteyner ve genel kargo terminalleri için kapsamlı çözüm.';
+---
+
+<Layout title={title} description={description}>
+  <ProductPage
+    productName="PortOps"
+    accent="amber"
+    heroTitleKey="po.hero.title"
+    heroSubtitleKey="po.hero.subtitle"
+    problemTitleKey="po.problem.title"
+    problemKeys={['po.problem.1','po.problem.2','po.problem.3','po.problem.4','po.problem.5']}
+    solutionTitleKey="po.solution.title"
+    solutionDescKey="po.hero.subtitle"
+    featuresTitleKey="po.features.title"
+    features={[
+      { titleKey: 'po.f1.title', descKey: 'po.f1.desc' },
+      { titleKey: 'po.f2.title', descKey: 'po.f2.desc' },
+      { titleKey: 'po.f3.title', descKey: 'po.f3.desc' },
+      { titleKey: 'po.f4.title', descKey: 'po.f4.desc' },
+      { titleKey: 'po.f5.title', descKey: 'po.f5.desc' },
+      { titleKey: 'po.f6.title', descKey: 'po.f6.desc' },
+    ]}
+    whoTitleKey="po.who.title"
+    whoListKey="po.who.list"
+  >
+    <div slot="hero-visual" class="hidden lg:block w-[520px] flex-shrink-0">
+      <div class="rounded-xl overflow-hidden shadow-2xl border border-white/10 ring-1 ring-white/10">
+        <div class="bg-slate-800/60 backdrop-blur-sm px-4 py-2.5 flex items-center gap-2">
+          <span class="w-3 h-3 rounded-full bg-red-400"></span>
+          <span class="w-3 h-3 rounded-full bg-yellow-400"></span>
+          <span class="w-3 h-3 rounded-full bg-green-400"></span>
+          <span class="ml-3 text-xs text-white/50 font-mono">PortOps — Operasyon Paneli</span>
+        </div>
+        <img
+          src="/images/portops-dashboard.png"
+          alt="PortOps uygulama ekranı"
+          class="w-full block"
+          loading="eager"
+        />
+      </div>
+    </div>
+  </ProductPage>
+</Layout>

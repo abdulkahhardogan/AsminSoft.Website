@@ -1,0 +1,49 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import ProductPage from '../../components/ProductPage.astro';
+
+const title = 'ContractorPass — Contractor Access Card Management Software | AsminSoft';
+const description = 'ContractorPass digitizes contractor personnel access card applications, document verification and approval workflows for construction sites and industrial facilities.';
+---
+
+<Layout title={title} description={description}>
+  <ProductPage
+    productName="ContractorPass"
+    accent="brand"
+    heroTitleKey="cp.hero.title"
+    heroSubtitleKey="cp.hero.subtitle"
+    problemTitleKey="cp.problem.title"
+    problemKeys={['cp.problem.1','cp.problem.2','cp.problem.3','cp.problem.4','cp.problem.5']}
+    solutionTitleKey="cp.solution.title"
+    solutionDescKey="cp.hero.subtitle"
+    featuresTitleKey="cp.features.title"
+    features={[
+      { titleKey: 'cp.f1.title', descKey: 'cp.f1.desc' },
+      { titleKey: 'cp.f2.title', descKey: 'cp.f2.desc' },
+      { titleKey: 'cp.f3.title', descKey: 'cp.f3.desc' },
+      { titleKey: 'cp.f4.title', descKey: 'cp.f4.desc' },
+      { titleKey: 'cp.f5.title', descKey: 'cp.f5.desc' },
+      { titleKey: 'cp.f6.title', descKey: 'cp.f6.desc' },
+      { titleKey: 'cp.f7.title', descKey: 'cp.f7.desc' },
+    ]}
+    whoTitleKey="cp.who.title"
+    whoListKey="cp.who.list"
+  >
+    <div slot="hero-visual" class="hidden lg:block w-[520px] flex-shrink-0">
+      <div class="rounded-xl overflow-hidden shadow-2xl border border-white/10 ring-1 ring-white/10">
+        <div class="bg-slate-800/60 backdrop-blur-sm px-4 py-2.5 flex items-center gap-2">
+          <span class="w-3 h-3 rounded-full bg-red-400"></span>
+          <span class="w-3 h-3 rounded-full bg-yellow-400"></span>
+          <span class="w-3 h-3 rounded-full bg-green-400"></span>
+          <span class="ml-3 text-xs text-white/50 font-mono">ContractorPass — Company Portal</span>
+        </div>
+        <img
+          src="/images/contractorpass-dashboard.png"
+          alt="ContractorPass application screen"
+          class="w-full block"
+          loading="eager"
+        />
+      </div>
+    </div>
+  </ProductPage>
+</Layout>
