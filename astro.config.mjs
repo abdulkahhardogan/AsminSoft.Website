@@ -7,6 +7,7 @@ import sitemap from '@astrojs/sitemap';
 export default defineConfig({
   site: 'https://abdulkahhardogan.github.io',
   base: '/AsminTech.Websitesi',
+  outDir: './docs',
   i18n: {
     defaultLocale: 'tr',
     locales: ['tr', 'en'],
