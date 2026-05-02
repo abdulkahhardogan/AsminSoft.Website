@@ -5,7 +5,8 @@ import sitemap from '@astrojs/sitemap';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://asminsoft.com',
+  site: 'https://abdulkahhardogan.github.io',
+  base: '/AsminSoft.Website',
   i18n: {
     defaultLocale: 'tr',
     locales: ['tr', 'en'],

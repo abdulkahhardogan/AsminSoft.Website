@@ -1,6 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import ProductPage from '../components/ProductPage.astro';
+import { withBasePath } from '../i18n/ui';
 
 const title = 'ShiftLog — Dijital Vardiya Defteri Yazılımı | AsminSoft';
 const description = 'ShiftLog, klasik vardiya defterini dijitalleştirir; olay kayıtları, devir teslim ve ekip iletişimini izlenebilir kılar. Vardiya takip ve vardiya defteri yazılımı.';
@@ -37,7 +38,7 @@ const description = 'ShiftLog, klasik vardiya defterini dijitalleştirir; olay k
           <span class="ml-3 text-xs text-white/50 font-mono">ShiftLog — Vardiya Paneli</span>
         </div>
         <img
-          src="/images/shiftlog-dashboard.png"
+          src={withBasePath('/images/shiftlog-dashboard.png')}
           alt="ShiftLog uygulama ekranı"
           class="w-full block"
           loading="eager"

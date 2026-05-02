@@ -2,7 +2,7 @@
 import '../styles/global.css';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
-import { getLangFromUrl, type Lang } from '../i18n/ui';
+import { getLangFromUrl, withBasePath, type Lang } from '../i18n/ui';
 
 interface Props {
   title: string;
@@ -14,6 +14,8 @@ interface Props {
 const { title, description, ogImage = '/og-default.png', canonicalPath } = Astro.props;
 const lang: Lang = getLangFromUrl(Astro.url);
 const canonical = new URL(canonicalPath ?? Astro.url.pathname, Astro.site ?? Astro.url.origin).toString();
+const favicon = withBasePath('/favicon.svg');
+const resolvedOgImage = ogImage.startsWith('http') ? ogImage : new URL(withBasePath(ogImage), Astro.site ?? Astro.url.origin).toString();
 ---
 
 <!doctype html>
@@ -21,7 +23,7 @@ const canonical = new URL(canonicalPath ?? Astro.url.pathname, Astro.site ?? Ast
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/svg+xml" href={favicon} />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
     <meta name="description" content={description} />
@@ -29,7 +31,7 @@ const canonical = new URL(canonicalPath ?? Astro.url.pathname, Astro.site ?? Ast
     <meta property="og:type" content="website" />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
-    <meta property="og:image" content={ogImage} />
+    <meta property="og:image" content={resolvedOgImage} />
     <meta property="og:url" content={canonical} />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />

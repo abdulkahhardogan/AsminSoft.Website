@@ -1,6 +1,7 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import ProductPage from '../../components/ProductPage.astro';
+import { withBasePath } from '../../i18n/ui';
 
 const title = 'ContractorPass — Contractor Access Card Management Software | AsminSoft';
 const description = 'ContractorPass digitizes contractor personnel access card applications, document verification and approval workflows for construction sites and industrial facilities.';
@@ -38,7 +39,7 @@ const description = 'ContractorPass digitizes contractor personnel access card a
           <span class="ml-3 text-xs text-white/50 font-mono">ContractorPass — Company Portal</span>
         </div>
         <img
-          src="/images/contractorpass-dashboard.png"
+          src={withBasePath('/images/contractorpass-dashboard.png')}
           alt="ContractorPass application screen"
           class="w-full block"
           loading="eager"

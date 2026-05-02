@@ -7,6 +7,21 @@ export const defaultLang = 'tr';
 
 export type Lang = keyof typeof languages;
 
+const basePath = import.meta.env.BASE_URL === '/' ? '' : import.meta.env.BASE_URL.replace(/\/$/, '');
+
+export function stripBasePath(path: string): string {
+  if (!basePath) return path;
+  if (path === basePath) return '/';
+  if (path.startsWith(`${basePath}/`)) return path.slice(basePath.length);
+  return path;
+}
+
+export function withBasePath(path: string): string {
+  const clean = path.startsWith('/') ? path : `/${path}`;
+  if (!basePath) return clean;
+  return clean === '/' ? `${basePath}/` : `${basePath}${clean}`;
+}
+
 export const ui = {
   tr: {
     'nav.home': 'Ana Sayfa',
@@ -337,13 +352,13 @@ export function useTranslations(lang: Lang) {
 }
 
 export function getLangFromUrl(url: URL): Lang {
-  const [, first] = url.pathname.split('/');
+  const [, first] = stripBasePath(url.pathname).split('/');
   if (first in languages) return first as Lang;
   return defaultLang;
 }
 
 export function localizedPath(lang: Lang, path: string): string {
   const clean = path.startsWith('/') ? path : `/${path}`;
-  if (lang === defaultLang) return clean === '/' ? '/' : clean;
-  return `/${lang}${clean === '/' ? '' : clean}`;
+  const localized = lang === defaultLang ? (clean === '/' ? '/' : clean) : `/${lang}${clean === '/' ? '' : clean}`;
+  return withBasePath(localized);
 }

@@ -1,6 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import ProductPage from '../components/ProductPage.astro';
+import { withBasePath } from '../i18n/ui';
 
 const title = 'PortOps — Liman Operasyonları Yönetim Yazılımı | AsminSoft';
 const description = 'PortOps, gemi, yük, vardiya ve ekipman süreçlerini entegre eden liman operasyon yönetim sistemidir. Konteyner ve genel kargo terminalleri için kapsamlı çözüm.';
@@ -37,7 +38,7 @@ const description = 'PortOps, gemi, yük, vardiya ve ekipman süreçlerini enteg
           <span class="ml-3 text-xs text-white/50 font-mono">PortOps — Operasyon Paneli</span>
         </div>
         <img
-          src="/images/portops-dashboard.png"
+          src={withBasePath('/images/portops-dashboard.png')}
           alt="PortOps uygulama ekranı"
           class="w-full block"
           loading="eager"

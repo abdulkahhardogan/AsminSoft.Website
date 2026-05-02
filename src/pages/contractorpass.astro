@@ -1,6 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import ProductPage from '../components/ProductPage.astro';
+import { withBasePath } from '../i18n/ui';
 
 const title = 'ContractorPass — Yüklenici Kart Başvuru Sistemi | AsminSoft';
 const description = 'ContractorPass, şantiye ve endüstriyel tesislerde yüklenici personelin giriş kart başvurusunu, belge kontrolünü ve onay süreçlerini uçtan uca dijitalleştirir. Yüklenici kart başvuru yazılımı.';
@@ -38,7 +39,7 @@ const description = 'ContractorPass, şantiye ve endüstriyel tesislerde yüklen
           <span class="ml-3 text-xs text-white/50 font-mono">ContractorPass — Firma Paneli</span>
         </div>
         <img
-          src="/images/contractorpass-dashboard.png"
+          src={withBasePath('/images/contractorpass-dashboard.png')}
           alt="ContractorPass uygulama ekranı"
           class="w-full block"
           loading="eager"
