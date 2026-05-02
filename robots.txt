@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://abdulkahhardogan.github.io/AsminTech.Websitesi/sitemap-index.xml
